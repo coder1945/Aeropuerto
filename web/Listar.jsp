@@ -4,12 +4,18 @@
     Author     : HOLDING
 --%>
 
+<%@page import="java.util.Iterator"%>
+<%@page import="modelo.Tiquete"%>
+<%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
-<%
 
-    ArrayList al = new ArrayList();
-    al.add(request.getParameter("nombre"));
+
+
+<%
+    List<Tiquete> lista = (List<Tiquete>) request.getAttribute("nombre");
+    Iterator<Tiquete> itPrendas = lista.iterator();
 %>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

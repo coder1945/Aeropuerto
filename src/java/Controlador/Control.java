@@ -7,10 +7,12 @@ package Controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Tiquete;
 
 /**
  *
@@ -39,6 +41,9 @@ public class Control extends HttpServlet {
             String destino = request.getParameter("destino");
             String silla = request.getParameter("silla");
             String valor = request.getParameter("valor");
+            
+            ArrayList lista = new ArrayList();
+            lista.add(new Tiquete(nombre,documento,origen,destino,silla,valor));
 
             if (nombre.equals("")) {
                 //if (nombre.equals("") || documento.equals("") || origen.equals("") || destino.equals("") || silla.equals("") || valor.equals("")) {

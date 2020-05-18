@@ -11,10 +11,7 @@
 
 
 
-<%
-    List<Tiquete> lista = (List<Tiquete>) request.getAttribute("nombre");
-    Iterator<Tiquete> itPrendas = lista.iterator();
-%>
+
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -29,7 +26,9 @@
         <div class="container">
             <br>
             <h2>Listado de tiquetes vendidos</h2>
-            <h2>Nombre Pasajero: <%= request.getAttribute("nombre")%></h2>
+            <hr>
+            <h2>Nombre Pasajero: <%= request.getAttribute("nombre") %></h2>
+            
             <hr>
             <a href="index.jsp">Regresar</a>  
 

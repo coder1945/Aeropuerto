@@ -17,6 +17,7 @@
             <form action="Control" method="POST">
                 <br>
                 <h2>Sistema de venta de tiquetes</h2>
+                <hr>
                 <label>Nombre</label>
                 <input type="text" name="nombre" id="nombre" class="form-control">
                 <label>Documento</label>
@@ -31,6 +32,8 @@
                 <input type="text" name="valor" id="valor" class="form-control">
                 <br>
                 <input type="submit" value="Registrar" class="btn btn-success">
+                <hr>
+                <center><h6>Cesar Salazar - Ing Sistemas - 359084</h6></center>
             </form>
         </div>
     </body>

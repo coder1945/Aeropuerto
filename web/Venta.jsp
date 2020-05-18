@@ -4,6 +4,18 @@
     Author     : HOLDING
 --%>
 
+
+<%@page import="java.util.ArrayList"%>
+<%
+
+    ArrayList al = new ArrayList();
+    al.add(request.getParameter("nombre"));
+    al.add("b");
+    al.add("c");
+
+
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,7 +36,9 @@
             <h2>Número Silla: <%= request.getParameter("silla")%></h2>
             <h2>Valor: <%= request.getParameter("valor")%></h2>
             <br>
-            <a href="index.jsp">Regresar</a>            
+            <a href="Listar.jsp">Listar</a>  
+            <a href="index.jsp">Regresar</a>        
+
         </div>
 
     </body>

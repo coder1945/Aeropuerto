@@ -5,15 +5,15 @@
 --%>
 
 
+<%@page import="java.util.Random"%>
 <%@page import="java.util.ArrayList"%>
 <%
-
     ArrayList al = new ArrayList();
     al.add(request.getParameter("nombre"));
-    al.add("b");
-    al.add("c");
-
-
+    
+    Random r = new Random();
+    int factura = (r.nextInt()*10);
+    
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -29,6 +29,7 @@
             <br>
             <h2>Venta correcta</h2>
             <hr>
+            <h2>Numero de Factura: <%= factura %></h2>
             <h2>Nombre:  <%= request.getParameter("nombre")%></h2>
             <h2>Identificación: <%= request.getParameter("documento")%></h2>
             <h2>Origen: <%= request.getParameter("origen")%></h2>

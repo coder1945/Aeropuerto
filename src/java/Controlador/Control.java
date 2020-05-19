@@ -8,6 +8,7 @@ package Controlador;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,22 +42,39 @@ public class Control extends HttpServlet {
             String destino = request.getParameter("destino");
             String silla = request.getParameter("silla");
             String valor = request.getParameter("valor");
-            
-            ArrayList lista = new ArrayList();
-            lista.add(new Tiquete(nombre,documento,origen,destino,silla,valor));
 
-            if (nombre.equals("")) {
-                //if (nombre.equals("") || documento.equals("") || origen.equals("") || destino.equals("") || silla.equals("") || valor.equals("")) {
+            List<String> lista;
+            lista = new ArrayList<>();
+
+            lista.add(nombre);
+            lista.add(documento);
+            lista.add(origen);
+            lista.add(destino);
+            lista.add(silla);
+            lista.add(valor);
+
+            for (int i = 0; i < lista.size(); i++) {
+                out.print(request.getAttribute(nombre));
+            }
+
+            //if (nombre.equals("")) {
+            if (nombre.equals("") || documento.equals("") || origen.equals("") || destino.equals("") || silla.equals("") || valor.equals("")) {
                 request.getRequestDispatcher("Error.jsp").forward(request, response);
             } else {
 
                 request.getRequestDispatcher("Venta.jsp").forward(request, response);
             }
 
+//            int val = Integer.parseInt(valor);
+//            int total = 0;
+//            for (Tiquete tiquete : lista) {
+//                total += Integer.parseInt(valor);
+//            }
+//            System.out.println(total);
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *

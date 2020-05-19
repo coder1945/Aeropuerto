@@ -9,9 +9,11 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 
+<%
 
-
-
+    ArrayList al = new ArrayList();
+    al.add(request.getParameter("nombre"));
+%>
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -27,8 +29,8 @@
             <br>
             <h2>Listado de tiquetes vendidos</h2>
             <hr>
-            <h2>Nombre Pasajero: <%= request.getAttribute("nombre") %></h2>
-            
+            <h2>Nombre:  <%= request.getParameter("nombre")%></h2>
+
             <hr>
             <a href="index.jsp">Regresar</a>  
 

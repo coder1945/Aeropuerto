@@ -16,7 +16,7 @@ public class Tiquete {
     private String origen;
     private String destino;
     private String silla;
-    private String valor;
+    public String valor;
 
     public Tiquete(String nombre, String documento, String origen, String destino, String silla, String valor) {
         this.nombre = nombre;
